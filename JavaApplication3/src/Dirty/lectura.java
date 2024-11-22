@@ -1,19 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
- */
-package Dirty;
 
-/**
- *
- * @author Defolt
- */
+package Dirty;
+import java.util.Scanner;
 public class lectura {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        // TODO code application logic here
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Coloca una frase que te guste para empezar \n");
+    String frase=scanner.nextLine();
+    System.out.println("Su frase es: "+frase+"\n");
     }
 }
