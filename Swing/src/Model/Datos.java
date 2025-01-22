@@ -17,36 +17,33 @@ public class Datos {
         this.cedula = cedula;
     }
 
-    // Getters
-
-    public String getNombre() {
+    // Getters y setters
+  public String getNombre() {
         return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre; // ✅ Ahora sí modifica el atributo
     }
 
     public int getEdad() {
         return edad;
     }
 
+    public void setEdad(int edad) {
+        this.edad = edad; // ✅ Ahora sí modifica el atributo
+    }
+
     public int getCedula() {
         return cedula;
     }
 
-  
+    public void setCedula(int cedula) {
+        this.cedula = cedula; // ✅ Ahora sí modifica el atributo
+    }
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre + " que tiene la edad de " + edad + " años y cedula: " + cedula ;
+        return "La persona de nombre " + nombre + ", tiene la edad de " + edad + " años y su numero de cedula es: " + cedula ;
     }   
-
-    public void setNombre(String nuevoNombre) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setEdad(int nuevaEdad) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setCedula(int nuevaCedula) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

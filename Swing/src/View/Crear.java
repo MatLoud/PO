@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package View;
 
@@ -11,13 +11,14 @@ import Controller.DatosController;
  * @author Defolt
  */
 public class Crear extends javax.swing.JInternalFrame {
-    private DatosController datos;
+  private DatosController datos;
     /**
      * Creates new form Crear
      */
     public Crear(DatosController datos) {
         this.datos = datos;
         initComponents();
+        setClosable(true);
     }
 
     /**
@@ -41,20 +42,22 @@ public class Crear extends javax.swing.JInternalFrame {
         lblerr = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Undertale-PNG.png"))); // NOI18N
         jLabel1.setText(".");
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         jLabel2.setText("Coloca los datos de la persona");
 
+        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel3.setText("Nombre:");
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel4.setText("Edad:");
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel5.setText("Cedula:");
 
+        btn1.setFont(new java.awt.Font("Nirmala UI Semilight", 1, 18)); // NOI18N
         btn1.setText("CREAR :0");
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,48 +70,48 @@ public class Crear extends javax.swing.JInternalFrame {
         jButton1.setText("Volver");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                volver(evt);
+                Volver(evt);
             }
         });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                .addGap(119, 119, 119)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(103, 103, 103)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(9, 9, 9)
-                                .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(4, 4, 4)
-                        .addComponent(lblerr, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblerr, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1)))
-                .addGap(0, 102, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addGap(9, 9, 9)
+                                    .addComponent(txt_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txt_cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel2))
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
@@ -126,29 +129,54 @@ public class Crear extends javax.swing.JInternalFrame {
                     .addComponent(txt_cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(jButton1))
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addComponent(lblerr)
-                .addGap(0, 51, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void DatosPersona(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DatosPersona
-        String nombre=txt_nombre.getText();
-        int edad=Integer.parseInt(txt_edad.getText());
-        int cedula=Integer.parseInt(txt_cedula.getText());
-        lblerr.setText(datos.agregarPersona(nombre, edad, cedula));
+        String nombre = txt_nombre.getText().trim();
+        String edadTexto = txt_edad.getText().trim();
+        String cedulaTexto = txt_cedula.getText().trim();
+
+        // Validar que los campos no estén vacíos
+        if (nombre.isEmpty() || edadTexto.isEmpty() || cedulaTexto.isEmpty()) {
+            lblerr.setText("Error: Todos los campos son obligatorios.");
+            return;
+        }
+        if (nombre.matches(".*\\d.*")) { // Verifica si el nombre contiene números
+            lblerr.setText("Error: El nombre no debe contener números.");
+            return;
+        }
+        try {
+            int edad = Integer.parseInt(edadTexto);
+            int cedula = Integer.parseInt(cedulaTexto);
+
+            // Validar que los valores sean positivos
+            if (edad <= 0 || cedula <= 0) {
+                lblerr.setText("Error: Edad y cédula deben ser números positivos.");
+                return;
+            }
+
+            lblerr.setText(datos.agregarPersona(nombre, edad, cedula));
+
+            // Limpiar los campos después de agregar
+            txt_nombre.setText("");
+            txt_edad.setText("");
+            txt_cedula.setText("");
+
+        } catch (NumberFormatException e) {
+            lblerr.setText("Error: Edad y cédula deben ser números válidos.");
+        }
     }//GEN-LAST:event_DatosPersona
 
-    private void volver(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volver
-    this.dispose();// TODO add your handling code here:
-    }//GEN-LAST:event_volver
+    private void Volver(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Volver
+    this.dispose();
+    }//GEN-LAST:event_Volver
 
-    /**
-     * @param args the command line arguments
-     */
-  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn1;

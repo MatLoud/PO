@@ -5,6 +5,7 @@
 package View;
 
 import Controller.DatosController;
+import javax.swing.JInternalFrame;
 
 /**
  *
@@ -12,9 +13,12 @@ import Controller.DatosController;
  */
 public class Pantalla extends javax.swing.JFrame {
     private DatosController datosController = new DatosController();
-    /**
-     * Creates new form Pantalla
-     */
+     Eliminar eliminar=new Eliminar(datosController);
+     Actualizar actualizar=new Actualizar(datosController);
+     Mostrar mostrar=new Mostrar(datosController);
+     Crear crear=new Crear(datosController);
+    
+
     public Pantalla() {
         initComponents();
     }
@@ -37,6 +41,7 @@ public class Pantalla extends javax.swing.JFrame {
         btn4 = new javax.swing.JButton();
         btn3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        btnn = new javax.swing.JButton();
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Hatsune-Miku-Transparent-Background.png"))); // NOI18N
         jLabel4.setText("jLabel4");
@@ -79,6 +84,15 @@ public class Pantalla extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Hatsune-Miku-Transparent-Background.png"))); // NOI18N
 
+        btnn.setBackground(new java.awt.Color(255, 0, 0));
+        btnn.setFont(new java.awt.Font("SimSun-ExtB", 0, 14)); // NOI18N
+        btnn.setText("NO TOCAR!");
+        btnn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                no0(evt);
+            }
+        });
+
         Contenedor.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Contenedor.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Contenedor.setLayer(btn1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -86,6 +100,7 @@ public class Pantalla extends javax.swing.JFrame {
         Contenedor.setLayer(btn4, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Contenedor.setLayer(btn3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         Contenedor.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Contenedor.setLayer(btnn, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout ContenedorLayout = new javax.swing.GroupLayout(Contenedor);
         Contenedor.setLayout(ContenedorLayout);
@@ -94,18 +109,20 @@ public class Pantalla extends javax.swing.JFrame {
             .addGroup(ContenedorLayout.createSequentialGroup()
                 .addGap(237, 237, 237)
                 .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btn4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn3, javax.swing.GroupLayout.Alignment.LEADING))
                     .addGroup(ContenedorLayout.createSequentialGroup()
                         .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel5))
-                    .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btn4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn3, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(255, Short.MAX_VALUE))
+                        .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(btnn, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         ContenedorLayout.setVerticalGroup(
             ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,7 +142,9 @@ public class Pantalla extends javax.swing.JFrame {
                 .addComponent(btn3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn4)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,31 +162,40 @@ public class Pantalla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Crear(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Crear
-    Crear crear=new Crear(datosController);
+    
     Contenedor.add(crear);
     crear.setVisible(true);
+    crear.setLocation((Contenedor.getWidth() - crear.getWidth()) / 2,(Contenedor.getHeight() - crear.getHeight()) / 2);
 // TODO add your handling code here:
     }//GEN-LAST:event_Crear
 
     private void Leer(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Leer
-    Mostrar mostrar=new Mostrar(datosController);
+    
     Contenedor.add(mostrar);
     mostrar.setVisible(true);
+    mostrar.setLocation((Contenedor.getWidth() - mostrar.getWidth()) / 2,(Contenedor.getHeight() - mostrar.getHeight()) / 2);
     // TODO add your handling code here:
     }//GEN-LAST:event_Leer
 
     private void Actualizar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Actualizar
-    Actualizar actualizar=new Actualizar(datosController);
+    
     Contenedor.add(actualizar);
     actualizar.setVisible(true);
+    actualizar.setLocation((Contenedor.getWidth() - actualizar.getWidth()) / 2,(Contenedor.getHeight() - actualizar.getHeight()) / 2);
     }//GEN-LAST:event_Actualizar
 
     private void Eliminar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar
-    Eliminar eliminar=new Eliminar(datosController);
+   
     Contenedor.add(eliminar);
     eliminar.setVisible(true);
+    eliminar.setLocation((Contenedor.getWidth() - eliminar.getWidth()) / 2,(Contenedor.getHeight() - eliminar.getHeight()) / 2);
+
     // TODO add your handling code here:
     }//GEN-LAST:event_Eliminar
+
+    private void no0(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_no0
+    System.exit(0);    // TODO add your handling code here:
+    }//GEN-LAST:event_no0
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Contenedor;
@@ -175,6 +203,7 @@ public class Pantalla extends javax.swing.JFrame {
     private javax.swing.JButton btn2;
     private javax.swing.JButton btn3;
     private javax.swing.JButton btn4;
+    private javax.swing.JButton btnn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
