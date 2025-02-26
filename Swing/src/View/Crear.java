@@ -11,9 +11,10 @@ import Controller.DatosController;
  * @author Defolt
  */
 public class Crear extends javax.swing.JInternalFrame {
-  private DatosController datos;
+  private final DatosController datos;
     /**
      * Creates new form Crear
+     * @param datos
      */
     public Crear(DatosController datos) {
         this.datos = datos;

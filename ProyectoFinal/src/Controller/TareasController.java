@@ -17,9 +17,9 @@ public class TareasController {
 
     private void initController() {
         vista.getBtnCrear().addActionListener(crearTarea());
-        vista.getBtnCompletado().addActionListener(marcarCompletado());
-        vista.getBtnPendiente().addActionListener(marcarPendiente());
-        vista.getBtnEliminar().addActionListener(eliminarTarea());
+        vista.getBtnCompletado().addActionListener(Completado());
+        vista.getBtnPendiente().addActionListener(Pendiente());
+        vista.getBtnEliminar().addActionListener(Eliminar());
         actualizarVista();
     }
 
@@ -39,31 +39,31 @@ public class TareasController {
         };
     }
 
-    private ActionListener marcarCompletado() {
+    private ActionListener Completado() {
         return (ActionEvent e) -> {
             int id = vista.obtenerIdSeleccionado();
             if(id == -1) {
                 vista.mostrarError("Selecciona una tarea de la tabla");
                 return;
             }
-            modelo.actualizarEstado(id, true);
+            modelo.Actualizar(id, true);
             actualizarVista();
         };
     }
 
-    private ActionListener marcarPendiente() {
+    private ActionListener Pendiente() {
         return (ActionEvent e) -> {
             int id = vista.obtenerIdSeleccionado();
             if(id == -1) {
                 vista.mostrarError("Selecciona una tarea de la tabla");
                 return;
             }
-            modelo.actualizarEstado(id, false);
+            modelo.Actualizar(id, false);
             actualizarVista();
         };
     }
 
-    private ActionListener eliminarTarea() {
+    private ActionListener Eliminar() {
         return (ActionEvent e) -> {
             int id = vista.obtenerIdSeleccionado();
             if(id == -1) {
@@ -79,3 +79,4 @@ public class TareasController {
         vista.actualizarTabla(modelo.listarTareas());
     }
 }
+//A dormir-MF

@@ -17,7 +17,7 @@ public class GestorTareas {
         return new ArrayList<>(tareas);
     }
     
-    public void actualizarEstado(int id, boolean completada) {
+    public void Actualizar(int id, boolean completada) {
         for(Tarea t : tareas) {
             if(t.getId() == id) {
                 t.setCompletada(completada);

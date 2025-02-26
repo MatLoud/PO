@@ -12,7 +12,7 @@ public class DatosController {
     }
 
     // Método para agregar productos
-   public String agregarPersona(String nombre, int precio, int cedula) {
+    public String agregarPersona(String nombre, int precio, int cedula) {
         if (precio < 0 || cedula < 0) {
         return "Error: no pueden ser negativos.";
         }
